@@ -22,12 +22,4 @@ public class Dog1 implements Pet1 {
     public void destroy(){
         System.out.println("Class Dog: destroy method");
     }
-
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
 }
