@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a class="p-2 text-dark" href="/">SIMPY</a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/uslugi/">Uslugi</a>
+        <a class="p-2 text-dark" href="/reviews">Reviews</a>
+    </nav>
+</div>
+
+<h1 class="title">Reviews</h1>
+
+<form action="reviews-add" method="post">
+    <input type="text" name="title" placeholder="Enter title" class="form-control"><br>
+    <textarea name="text" placeholder="Enter text" class="form-control"></textarea><br>
+    <input type="hidden" name="_csrf"
+           value="{{#_csrf}}{{_csrf.token}}{{/_csrf}}">
+    <button type="submit" class="btn btn-success">Add review</button>
+</form>
+<br>
+<h3>All reviews</h3>
+{{#reviews}}
+    <h3 class="mt-2">{{title}}</h3>
+    <p>{{text}}</p>
+    <a class="btn btn-warning" href="reviews/{{id}}">Show</a>
+{{/reviews}}
+
+<footer>
+    <p>@Jane - Все права защищены.</p>
+</footer>
+</body>
+</html>

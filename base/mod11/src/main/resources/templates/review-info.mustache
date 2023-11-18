@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/uslugi.css">
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a class="p-2 text-dark" href="/">SIMPY</a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/uslugi/">Uslugi</a>
+        <a class="p-2 text-dark" href="/reviews">Reviews</a>
+    </nav>
+</div>
+
+{{#review}}
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+    <form action="http://localhost:8080/reviews/{{id}}/delete" method="post">
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+    <br><br>
+    <a class="btn btn-warning" href="http://localhost:8080/reviews/{{id}}/update">Update</a>
+    <input type="hidden" name="_csrf"
+           value="{{#_csrf}}{{_csrf.token}}{{/_csrf}}">
+
+{{/review}}
+<footer>
+    <p>@Jane - Все права защищены.</p>
+</footer>
+</body>
+</html>

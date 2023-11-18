@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a class="p-2 text-dark" href="/">SIMPY</a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/uslugi/">Услуги</a>
+        <a class="p-2 text-dark">Контакты</a>
+        <a class="p-2 text-dark">Про нас</a>
+    </nav>
+</div>
+
+<form action="/login" method="post">
+    <input type="text" name="username" class="form-control" placeholder="User name"/><br>
+    <input type="password" name="password" class="form-control" placeholder="Password"/><br>
+    <input type="hidden" name="_csrf"
+           value="{{#_csrf}}{{_csrf.token}}{{/_csrf}}">
+    <input type="submit" value="Sign In" class="btn btn-success"/>
+</form>
+
+<footer>
+    <p>@Jane - Все права защищены.</p>
+</footer>
+</body>
+</html>
